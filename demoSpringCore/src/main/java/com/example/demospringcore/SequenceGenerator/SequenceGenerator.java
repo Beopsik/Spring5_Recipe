@@ -1,4 +1,4 @@
-package com.example.demospringcore;
+package com.example.demospringcore.SequenceGenerator;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

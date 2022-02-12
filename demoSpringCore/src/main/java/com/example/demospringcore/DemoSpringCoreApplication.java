@@ -1,19 +1,20 @@
 package com.example.demospringcore;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.demospringcore.Sequence.SequenceDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootApplication
+
 public class DemoSpringCoreApplication {
 
     public static void main(String[] args) {
-//        SpringApplication.run(DemoSpringCoreApplication.class, args);
-        ApplicationContext context=new AnnotationConfigApplicationContext(SequenceGeneratorConfiguration.class);
-        SequenceGenerator generator = context.getBean("sequenceGenerator", SequenceGenerator.class);
+        ApplicationContext context=new AnnotationConfigApplicationContext("com.example.demospringcore");
 
-        System.out.println(generator.getSequence());
-        System.out.println(generator.getSequence());
+        SequenceDao sequenceDao = context.getBean(SequenceDao.class);
+
+        System.out.println(context.containsBean("testDao"));
+        System.out.println(context.containsBean("testDto"));
+        System.out.println(sequenceDao.getNextValue("IT"));
+        System.out.println(sequenceDao.getNextValue("IT"));
     }
 }

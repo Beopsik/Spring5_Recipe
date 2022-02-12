@@ -1,4 +1,4 @@
-package com.example.demospringcore;
+package com.example.demospringcore.SequenceGenerator;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
